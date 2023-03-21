@@ -71,12 +71,12 @@ int main() {
 			result += mes1[i];
 		}
 		
-		printf("Soma dos meses: %.2f", result);
+		printf("Soma dos meses: %.2f\n", result);
 		renda = renda - result;
-		printf("%.2f\n", renda);
+		printf("saldo restante: %.2f\n", renda);
 		
 		if (renda < 200) {
-			printf("Tente reduzir seus gastos mensais.");
+			printf("\nTente reduzir seus gastos mensais.");
 		}
 		
 	} else {
