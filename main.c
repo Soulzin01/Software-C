@@ -3,64 +3,59 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int main() {
+
+int main(){
 	
-	int y, x;
+	int meses;
+	char resp[5], checkGastos[5];
     
     setlocale(LC_ALL, "Portuguese_Brazil");
     
     printf("Tem gastos para adicionar?\n");
-    printf("\nDigite -> 1 para SIM\t\t0 para NÃO: ");
-    scanf("%d", &y);
+    printf("Digite \"Sim\" ou \"Não\".");
+    fgets(checkGastos, 5, stdin);
+	getchar();
+	system("cls");
     
-    system("cls");
-    
-    if (y == 1) {
-    	printf("Digite o número de gastos que deseja adicionar: ");
-    	scanf("%d", &x);
-    	
-    	system("cls");
-    	while (x > 10) {
-    		printf("O número máximo de gastos é apenas 10!\n\n");
-    		printf("Por favor digite novamente.\n");
-    		printf("\nDigite o número de gastos que deseja adicionar: ");
-    		scanf("%d", &x);
-		}
-		
-    	// Descarta o caractere de nova linha deixado na entrada
+
+	printf("%s\n", checkGastos);
+    if (strcmp(checkGastos, "Sim") == 0 && strcmp(checkGastos, "sim") == 0) {
+    	printf("Digite o número de meses que deseja adicionar: ");
+    	scanf("%d", &meses);
     	getchar();
+		while (meses > 12) {
+    		printf("O número máximo de meses que o sistema suporta é apenas 12.\n\nPor favor, digite novamente.\n");
+    		printf("\nDigite o número de meses que deseja adicionar: ");
+    		scanf("%d", &meses);
+		}
     	
-    	char gastos[x][50];
-    	int mes1[x], mes2[x];
+    	char gastos[meses][20];
+    	int gasto[meses];
     	
-    	for(int i = 0; i < x; i++) {
-    		printf("Tipo de gasto - %d°: ", i+1);
-    		fgets(gastos[i], 50, stdin);
-    		
-    		printf("Valor no mês 1: ");
-    		scanf("%d", &mes1[i]);
-    		
-    		printf("Valor no mês 2: ");
-    		scanf("%d", &mes2[i]);
-    		
-    		// Descarta o caractere de nova linha deixado na entrada
-    		getchar();
-    		
-    		system("cls");
+    	for(int i = 0; i < meses; i++) {
+			int mark = 0;
+			printf("Tipo de gasto - %d°: ", i+1);
+			fgets(gastos[mark][i], 20, stdin);
+			while(strcmp(resp, "Sim") && strcmp(resp, "sim")){
+				printf("Valor: ");
+				scanf("%d", &gasto[i]);
+				// Descarta o caractere de nova linha deixado na entrada
+				getchar();
+
+				mark++;
+			}
 		}
 		
 		// Exibe os dados armazenados
 		printf("\nDados dos gastos:\n\n");
-		for(int i = 0; i < x; i++) {
+		for(int i = 0; i < meses; i++) {
 			printf("Gasto - %d:\n\n", i+1);
 			printf("Tipo: %s", gastos[i]);
-			printf("Mês 1: %d\n", mes1[i]);
-			printf("Mês 2: %d\n", mes2[i]);
+			printf("Mês 1: %d\n", gasto[i]);
 			printf("\n");
 		}
 	} else {
 		printf("EM DESENVOLVIMENTO!");
 	}
-    
 	return 0;
 }
