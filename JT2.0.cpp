@@ -24,21 +24,21 @@ int main() {
     scanf("%f", &renda);
     
     printf("Tem gastos para adicionar?\n");
-    printf("\nDigite -> 1 para SIM\t\t0 para NÃO: ");
+    printf("\nDigite -> 1 para SIM\t\t0 para NÃƒO: ");
     scanf("%d", &y);
     
     system("cls");
 
     if (y == 1) {
-    	printf("Digite o número de gastos que deseja adicionar: ");
+    	printf("Digite o nÃºmero de gastos que deseja adicionar: ");
     	scanf("%d", &x);
     	
     	system("cls");
     	
     	while (x > 10) {
-    		printf("O número máximo de gastos é apenas 10!\n\n");
+    		printf("O nÃºmero mÃ¡ximo de gastos Ã© apenas 10!\n\n");
     		printf("Por favor digite novamente.\n");
-    		printf("\nDigite o número de gastos que deseja adicionar: ");
+    		printf("\nDigite o nÃºmero de gastos que deseja adicionar: ");
     		scanf("%d", &x);
 		}
 		
@@ -46,17 +46,14 @@ int main() {
     	getchar();
     	
     	char gastos[x][50];
-    	float mes1[x], mes2[x];
+    	float mes1[x];
     	
     	for(int i = 0; i < x; i++) {
-    		printf("Tipo de gasto - %d°: ", i+1);
+    		printf("Tipo de gasto - %dÂ°: ", i+1);
     		fgets(gastos[i], 50, stdin);
     		
-    		printf("Valor no mês 1: ");
+    		printf("Valor no mÃªs 1: ");
     		scanf("%f", &mes1[i]);
-    		
-    		printf("Valor no mês 2: ");
-    		scanf("%f", &mes2[i]);
     		
     		// Descarta o caractere de nova linha deixado na entrada
     		getchar();
@@ -69,16 +66,18 @@ int main() {
 		for(int i = 0; i < x; i++) {
 			printf("Gasto - %d:\n\n", i+1);
 			printf("Tipo: %s", gastos[i]);
-			printf("Mês 1: %.2f\n", mes1[i]);
-			printf("Mês 2: %.2f\n", mes2[i]);
+			printf("MÃªs 1: %.2f\n", mes1[i]);
 			printf("\n");
-			result += mes1[i] + mes2[i];
+			result += mes1[i];
 		}
-		printf("Renda: %.2f\n", renda);
-		renda = renda * 2;
-		printf("Renda nos 2 meses: %.2f\n", renda);
+		
+		printf("Soma dos meses: %.2f", result);
 		renda = renda - result;
-		printf("Sobra da renda: %.2f", renda);
+		printf("%.2f\n", renda);
+		
+		if (renda < 200) {
+			printf("Tente reduzir seus gastos mensais.");
+		}
 		
 	} else {
 		printf("Nome: %s\n", nome);
@@ -88,4 +87,3 @@ int main() {
     
 	return 0;
 }
-
