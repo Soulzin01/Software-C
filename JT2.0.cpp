@@ -12,7 +12,7 @@ int main() {
     
     setlocale(LC_ALL, "Portuguese_Brazil");
     
-    printf("Bem Vindo ao Gerenciador de Renda!\n");
+    printf("Bem Vindo ao Gerenciador de Renda!\n\n");
     
     printf("Preencha com seus dados\n");
     
@@ -23,13 +23,14 @@ int main() {
     printf("Renda Mensal: ");
     scanf("%f", &renda);
     
-    printf("Tem gastos para adicionar?\n");
+    printf("\nTem gastos para adicionar?\n");
     printf("\nDigite -> 1 para SIM\t\t0 para NÃO: ");
     scanf("%d", &y);
     
     system("cls");
 
     if (y == 1) {
+    	printf("Ótimo!\n\n");
     	printf("Digite o número de gastos que deseja adicionar: ");
     	scanf("%d", &x);
     	
@@ -70,8 +71,10 @@ int main() {
 			printf("\n");
 			result += mes1[i];
 		}
-		
-		printf("Soma dos meses: %.2f\n", result);
+		printf("--------------------------------\n\n");
+		printf("***Extrato***\n\n");
+		printf("Renda mensal: %.2f\n", renda);
+		printf("Soma dos gastos e meses: %.2f\n", result);
 		renda = renda - result;
 		printf("saldo restante: %.2f\n", renda);
 		
@@ -80,9 +83,10 @@ int main() {
 		}
 		
 	} else {
-		printf("Nome: %s\n", nome);
+		printf("Nome: %s", nome);
 		printf("Idade: %d\n", idade);
 		printf("Renda: %.3f\n", renda);
+		printf("\nPara novo acesso abra novamente o programa.");
 	}
     
 	return 0;
