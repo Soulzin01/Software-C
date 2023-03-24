@@ -85,7 +85,7 @@ int main()
 
 		if (renda < 200)
 		{
-			printf("\nSua renda final está abaixo de R$200.00, é recomendado reduzir os gastos mensais..");
+			printf("\nSua renda final está abaixo de R$200.00, é recomendado reduzir os gastos mensais.");
 		}
 	}
 	else
