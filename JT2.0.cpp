@@ -33,7 +33,7 @@ int main()
 	{
 		printf("Ótimo!\n\n");
 		printf("Digite o número de gastos que deseja adicionar: ");
-		scanf("%d", &x); // Leitura do número de gastos
+		scanf("%d", &x);
 
 		system("cls");
 
@@ -93,7 +93,7 @@ int main()
 		printf("Nome: %s", nome);
 		printf("Idade: %d\n", idade);
 		printf("Renda: %.2f\n", renda);
-		printf("\nPara novo acesso abra novamente o programa.");
+		printf("\nPara novo acesso, abra novamente o programa.");
 	}
 
 	return 0;
