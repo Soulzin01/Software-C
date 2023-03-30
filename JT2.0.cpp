@@ -67,7 +67,7 @@ int main()
 
 		// Exibe os dados armazenados
 		printf("\nDados dos gastos:\n\n");
-		for (int i = 0; i < x; i++)
+		for (int i = 0; i < x; i++) // Estrutura de repetição para exibir os gastos
 		{
 			printf("Gasto - %d:\n\n", i + 1);
 			printf("Tipo: %s", gastos[i]);
