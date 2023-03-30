@@ -12,7 +12,7 @@ int main()
 
 	setlocale(LC_ALL, "Portuguese_Brazil"); // Configuração de idioma - Compatibilidade com UTF-8
 
-	printf("Bem Vindo ao Gerenciador de Renda!\n\n");
+	printf("Seja bem-vindo ao Gerenciador de Renda!\n\n");
 
 	printf("Preencha com seus dados\n");
 
